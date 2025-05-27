@@ -1,0 +1,81 @@
+<html>
+
+	<head>
+		<style>
+			body{
+				text-align:center;
+			}
+			.hh{
+				font-size:3em;
+				color:#d6ec8c;
+				font-weight:bold;
+			}
+			.bt{
+				width:30%;
+				height:10%;
+				background-color:#71e4d2;
+				font-size:2em;
+				color:white;
+				font-weight:bold;
+			}
+			.txt{
+				width:40%;
+				height:10%;
+				font-size:4em;
+				font-weight:bold;
+				color:red;
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class='hh'>타이머 예제</h1><br>
+		
+		<img id='img1'><br><br><br><br><br>
+
+		<button class='bt' onclick='card1();'>사진 시작</button>
+		<button class='bt' onclick='card2();'>사진 멈춤</button>
+
+		<script>
+			setInterval(timer,1000);
+
+			var i=0;
+			var state=0;
+
+			function timer()
+			{
+				switch(state){
+					case 1:
+						document.getElementById('img1').src='1.png'
+						state=10;
+					break;
+					case 10:
+						document.getElementById('img1').src='2.png'
+						state=11;
+					break;
+					case 11:
+						document.getElementById('img1').src='3.png'
+						state=1;
+					break;
+					default:
+					break;
+					}
+			}
+			function card1()
+			{
+				state=1;
+			}
+			function card2()
+			{
+				state=2;
+			}
+			function card3()
+			{
+				state=3;
+			}
+		</script>
+	</body>
+
+
+
+</html>
